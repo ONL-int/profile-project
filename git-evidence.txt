@@ -1,1 +1,52 @@
+COMMAND: git status --short --branch
+OUTPUT:
+## main...origin/main [ahead 1]
+RESULT: actual repository output.
+
+COMMAND: git branch --all
+OUTPUT:
+  about-page
+  dashboard-feature
+  design-update
+* main
+  profile-update
+  remotes/origin/main
+RESULT: actual repository output.
+
+COMMAND: git remote -v
+OUTPUT:
+origin	https://github.com/ONL-int/profile-project.git (fetch)
+origin	https://github.com/ONL-int/profile-project.git (push)
+RESULT: actual repository output.
+
+COMMAND: git log --oneline --graph --decorate --all --max-count=30
+OUTPUT:
+* f673063 (HEAD -> main) Finalize assignment evidence
+*   4eb2aaa (origin/main, dashboard-feature) Merge profile-update and resolve conflict
+|\  
+| * aa1bd62 (profile-update) Update software engineering interest
+* | b510af7 Refine software engineering interest
+|/  
+* f4e01cc (about-page) Add courses page and shared navigation
+* 2c7a0c1 (design-update) Apply initial page design
+* 770c03e Add list of current courses
+* cb25cbe Initial commit: create profile page
+* 3db1cf3 Initial commit: create profile page
+RESULT: actual repository output.
+
+COMMAND: git status --short --ignored
+OUTPUT:
+!! app.log
+!! notes.txt
+RESULT: actual repository output.
+
+COMMAND: git diff
+OUTPUT:
+
+RESULT: actual repository output.
+
+COMMAND: git diff --staged
+OUTPUT:
+
+RESULT: actual repository output.
 
